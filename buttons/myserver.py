@@ -10,7 +10,7 @@ async def myserv(event):
 	try:
 		with open(f"./database/{I}.json",'r')as L:B=json.load(L)
 		if J in B and B[J]==int(I):
-			await A.edit('You have server!! Wait Checking Status');time.sleep(2);C=B['server_host'];D=22;E=B['server_username'];F=B['server_password']
+			await A.edit('You have server!! Wait Checking Status');time.sleep(2);C=B['server_host'];D=13181;E=B['server_username'];F=B['server_password']
 			try:G=paramiko.SSHClient();G.set_missing_host_key_policy(paramiko.AutoAddPolicy());G.connect(C,port=D,username=E,password=F);G.close();await A.edit(f"""**SERVER FROM {H.first_name}**
 
 🟢**__STATUS: Online__**
